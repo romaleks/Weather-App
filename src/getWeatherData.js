@@ -6,11 +6,20 @@ async function getWeatherData(country) {
     if (!response.ok) throw new Error('Unknown city');
     else {
       const weatherData = await response.json();
-      console.log(weatherData);
+      console.log(getNeededData(weatherData));
     }
   } catch (error) {
     alert(error);
   }
+}
+
+function getNeededData(data) {
+  return {
+    temp: data.main.temp,
+    pressure: data.main.pressure,
+    humidity: data.main.humidity,
+    windSpeed: data.wind.speed,
+  };
 }
 
 export default getWeatherData;
