@@ -1,3 +1,4 @@
+import './styles/main.scss';
 import getWeatherData from './getWeatherData';
 import setWeatherIcon from './setWeatherIcon';
 

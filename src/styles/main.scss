@@ -1,0 +1,52 @@
+// General
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: hsl(208, 97%, 87%);
+  color: hsl(201, 85%, 36%);
+}
+
+.temp {
+  font-size: 7rem;
+  line-height: 1;
+}
+.desc {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+.details {
+  display: flex;
+  gap: 1.7rem;
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    &:first-child .details__icon {
+      margin: 0 5px 0 0;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    filter: invert(30%) sepia(83%) saturate(1494%) hue-rotate(176deg) brightness(89%)
+      contrast(93%);
+  }
+
+  &__num {
+    font-size: 1.2rem;
+  }
+}
+#weather-icon {
+  transform: translateY(-1.5rem);
+}
