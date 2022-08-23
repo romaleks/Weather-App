@@ -1,3 +1,9 @@
 import getWeatherData from './getWeatherData';
+import setWeatherIcon from './setWeatherIcon';
 
-getWeatherData('tokio');
+async function runApp() {
+  const weatherData = await getWeatherData('Moscow');
+  setWeatherIcon(weatherData.icon);
+}
+
+runApp();
