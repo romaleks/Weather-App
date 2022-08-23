@@ -7,20 +7,23 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="temp">27</div>
-    <div class="desc">Mostly Clear</div>
+    <div class="temp">
+      <span></span>
+      <div class="temp__unit">°C</div>
+    </div>
+    <div class="desc"></div>
     <div class="details">
       <div class="details__item">
         <div class="details__icon"><img src="./images/pressure.svg" alt="" /></div>
-        <div class="details__num">720 hpa</div>
+        <div id="pressure" class="details__num"></div>
       </div>
       <div class="details__item">
         <div class="details__icon"><img src="./images/humidity.svg" alt="" /></div>
-        <div class="details__num">45%</div>
+        <div id="humidity" class="details__num"></div>
       </div>
       <div class="details__item">
         <div class="details__icon"><img src="./images/wind.svg" alt="" /></div>
-        <div class="details__num">5 m/h</div>
+        <div id="wind" class="details__num"></div>
       </div>
     </div>
     <img src="" alt="" id="weather-icon" />

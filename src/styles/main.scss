@@ -20,6 +20,14 @@ body {
 .temp {
   font-size: 7rem;
   line-height: 1;
+  position: relative;
+  &__unit {
+    position: absolute;
+    top: -0.3rem;
+    right: -1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }
 .desc {
   font-size: 2rem;
