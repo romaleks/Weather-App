@@ -2,23 +2,28 @@ import './styles/main.scss';
 import getWeatherData from './getWeatherData';
 import setWeatherIcon from './setWeatherIcon';
 
-async function runApp(country) {
-  const countryInput = document.querySelector('input');
-  const tempParam = document.querySelector('.temp span');
-  const descParam = document.querySelector('.desc');
-  const pressureParam = document.querySelector('#pressure');
-  const humidityParam = document.querySelector('#humidity');
-  const windParam = document.querySelector('#wind');
+async function runApp(city, ev) {
+  if (ev) ev.preventDefault();
 
-  const weatherData = await getWeatherData(country);
+  let weatherData = await getWeatherData(city);
   setWeatherIcon(weatherData.icon);
 
-  countryInput.value = country;
+  cityInput.value = weatherData.name;
   tempParam.textContent = Math.round(weatherData.temp);
   descParam.textContent = weatherData.desc;
   pressureParam.textContent = weatherData.pressure + 'hpa';
   humidityParam.textContent = weatherData.humidity + '%';
   windParam.textContent = weatherData.windSpeed + 'm/s';
 }
+
+const cityForm = document.querySelector('form');
+const cityInput = document.querySelector('input');
+const tempParam = document.querySelector('.temp span');
+const descParam = document.querySelector('.desc');
+const pressureParam = document.querySelector('#pressure');
+const humidityParam = document.querySelector('#humidity');
+const windParam = document.querySelector('#wind');
+
+cityForm.addEventListener('submit', ev => runApp(cityInput.value, ev));
 
 runApp('Moscow');

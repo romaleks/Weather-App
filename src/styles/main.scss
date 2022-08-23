@@ -17,7 +17,7 @@ body {
   color: hsl(201, 85%, 36%);
 }
 // Main
-.country {
+.city {
   background: none;
   color: inherit;
   border: none;
@@ -25,7 +25,7 @@ body {
   text-align: center;
   font-size: 4rem;
   margin: 0 0 1rem 0;
-  text-decoration: 2px underline wavy;
+  text-decoration: 1px underline wavy;
   text-decoration-color: hsl(201, 25%, 36%);
   cursor: pointer;
 }
