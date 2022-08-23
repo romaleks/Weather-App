@@ -19,9 +19,14 @@ function getNeededData(data) {
     pressure: data.main.pressure,
     humidity: data.main.humidity,
     windSpeed: data.wind.speed,
-    desc: data.weather[0].description,
+    desc: transformDesc(data.weather[0].description),
     icon: data.weather[0].icon,
   };
+}
+
+function transformDesc(desc) {
+  const correctArr = desc.split(' ').map(word => word[0].toUpperCase() + word.slice(1));
+  return correctArr.join(' ');
 }
 
 export default getWeatherData;

@@ -16,7 +16,19 @@ body {
   background: hsl(208, 97%, 87%);
   color: hsl(201, 85%, 36%);
 }
-
+// Main
+.country {
+  background: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+  text-decoration: 2px underline wavy;
+  text-decoration-color: hsl(201, 25%, 36%);
+  cursor: pointer;
+}
 .temp {
   font-size: 7rem;
   line-height: 1;

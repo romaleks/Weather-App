@@ -3,6 +3,7 @@ import getWeatherData from './getWeatherData';
 import setWeatherIcon from './setWeatherIcon';
 
 async function runApp(country) {
+  const countryInput = document.querySelector('input');
   const tempParam = document.querySelector('.temp span');
   const descParam = document.querySelector('.desc');
   const pressureParam = document.querySelector('#pressure');
@@ -12,6 +13,7 @@ async function runApp(country) {
   const weatherData = await getWeatherData(country);
   setWeatherIcon(weatherData.icon);
 
+  countryInput.value = country;
   tempParam.textContent = Math.round(weatherData.temp);
   descParam.textContent = weatherData.desc;
   pressureParam.textContent = weatherData.pressure + 'hpa';
