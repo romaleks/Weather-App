@@ -1,7 +1,7 @@
 async function getWeatherData(city, units) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&cnt=3&APPID=4f656779e97d60de8d6032708f670f5e`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&cnt=3&APPID=4f656779e97d60de8d6032708f670f5e`
     );
     if (!response.ok) throw new Error('Unknown city');
     else {
