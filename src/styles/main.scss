@@ -9,6 +9,7 @@
   font-family: 'DM Sans', sans-serif;
 }
 body {
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ body {
 }
 // Main
 .city {
+  max-width: 450px;
   background: none;
   color: inherit;
   border: none;

@@ -1,7 +1,7 @@
-async function getWeatherData(city) {
+async function getWeatherData(city, units) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&cnt=3&APPID=4f656779e97d60de8d6032708f670f5e`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&cnt=3&APPID=4f656779e97d60de8d6032708f670f5e`
     );
     if (!response.ok) throw new Error('Unknown city');
     else {
@@ -30,4 +30,16 @@ function transformDesc(desc) {
   return correctArr.join(' ');
 }
 
-export default getWeatherData;
+function changeUnits(element) {
+  if (element.getAttribute('data-celsius') === 'true') {
+    element.textContent = '°F';
+    element.setAttribute('data-celsius', 'false');
+    return 'standart';
+  } else {
+    element.textContent = '°C';
+    element.setAttribute('data-celsius', 'true');
+    return 'metric';
+  }
+}
+
+export { getWeatherData, changeUnits };

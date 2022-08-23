@@ -1,11 +1,12 @@
 import './styles/main.scss';
-import getWeatherData from './getWeatherData';
+import { getWeatherData, changeUnits } from './getWeatherData';
 import setWeatherIcon from './setWeatherIcon';
 
-async function runApp(city, ev) {
+async function runApp(city, ev, units) {
   if (ev) ev.preventDefault();
 
-  let weatherData = await getWeatherData(city);
+  let weatherData = await getWeatherData(city, units);
+  if (!weatherData) return;
   setWeatherIcon(weatherData.icon);
 
   cityInput.value = weatherData.name;
@@ -24,15 +25,21 @@ async function runApp(city, ev) {
 
 const cityForm = document.querySelector('form');
 const cityInput = document.querySelector('input');
+const degrees = document.querySelector('.temp__unit');
 const tempParam = document.querySelector('.temp span');
 const descParam = document.querySelector('.desc');
 const pressureParam = document.querySelector('#pressure');
 const humidityParam = document.querySelector('#humidity');
 const windParam = document.querySelector('#wind');
+let units = 'metric';
 
 cityForm.addEventListener('submit', ev => {
-  runApp(cityInput.value, ev);
+  runApp(cityInput.value, ev, units);
   cityInput.blur();
 });
+degrees.addEventListener('click', () => {
+  units = changeUnits(degrees);
+  runApp(cityInput.value, null, units);
+});
 
-runApp('Moscow');
+runApp('Moscow', null, units);
