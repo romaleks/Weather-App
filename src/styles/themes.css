@@ -1,0 +1,15 @@
+:root {
+  --bg-color: hsl(208, 97%, 87%);
+  --font-color: hsl(201, 85%, 36%);
+  --underline-color: hsl(201, 25%, 36%);
+  --filter: invert(30%) sepia(83%) saturate(1494%) hue-rotate(176deg) brightness(89%)
+    contrast(93%);
+}
+
+:root.dark {
+  --bg-color: hsl(200, 95%, 11%);
+  --font-color: hsl(0, 0%, 100%);
+  --underline-color: hsl(0, 0%, 100%);
+  --filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(338deg) brightness(108%)
+    contrast(100%);
+}

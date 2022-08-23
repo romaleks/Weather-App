@@ -14,6 +14,12 @@ async function runApp(city, ev) {
   pressureParam.textContent = weatherData.pressure + 'hpa';
   humidityParam.textContent = weatherData.humidity + '%';
   windParam.textContent = weatherData.windSpeed + 'm/s';
+
+  if (weatherData.icon.indexOf('n') !== -1) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
 }
 
 const cityForm = document.querySelector('form');
@@ -24,6 +30,9 @@ const pressureParam = document.querySelector('#pressure');
 const humidityParam = document.querySelector('#humidity');
 const windParam = document.querySelector('#wind');
 
-cityForm.addEventListener('submit', ev => runApp(cityInput.value, ev));
+cityForm.addEventListener('submit', ev => {
+  runApp(cityInput.value, ev);
+  cityInput.blur();
+});
 
 runApp('Moscow');

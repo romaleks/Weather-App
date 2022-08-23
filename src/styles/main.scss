@@ -1,5 +1,6 @@
 // General
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+@import url(./themes.css);
 
 * {
   margin: 0;
@@ -13,8 +14,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: hsl(208, 97%, 87%);
-  color: hsl(201, 85%, 36%);
+  background: var(--bg-color);
+  color: var(--font-color);
 }
 // Main
 .city {
@@ -26,7 +27,7 @@ body {
   font-size: 4rem;
   margin: 0 0 1rem 0;
   text-decoration: 1px underline wavy;
-  text-decoration-color: hsl(201, 25%, 36%);
+  text-decoration-color: var(--underline-color);
   cursor: pointer;
 }
 .temp {
@@ -59,8 +60,7 @@ body {
 
   &__icon {
     width: 30px;
-    filter: invert(30%) sepia(83%) saturate(1494%) hue-rotate(176deg) brightness(89%)
-      contrast(93%);
+    filter: var(--filter);
   }
 
   &__num {
