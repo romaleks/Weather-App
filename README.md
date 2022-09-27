@@ -1,4 +1,4 @@
-# Todo App
+# Weather App
 
 This project is a part of the "The Odin Project" [curriculum](https://www.theodinproject.com/).
 
